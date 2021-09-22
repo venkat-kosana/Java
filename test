@@ -1,0 +1,112 @@
+package practise;
+import java.util.*;
+/*interface ITestPaper
+{
+	String subjectName ();
+
+	String testPaperName();
+
+	ArrayList<IQuestion> questions();
+	
+}
+interface IQuestion
+{
+	
+}
+interface IOption
+{
+	
+}
+interface IStudent
+{
+	
+}*/
+class TestPaper 
+{
+	
+
+}
+class Question 
+{
+	
+	private String question;
+	
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	LinkedHashMap<String,Map> lhmq=new LinkedHashMap<String,Map>();
+	public void addQuestion(String str,LinkedHashMap h)
+	{
+		lhmq.put(str,h);
+	}
+	public void display()
+	{
+		lhmq.forEach((k,v)-> System.out.println();
+	}
+	
+	
+}
+class AddQuestion
+{
+	
+	
+	
+}
+class Option 
+{
+	LinkedHashMap<Character,String> lhmo = new LinkedHashMap<Character,String>();
+	private  char op;
+	private String optn;
+	public char getOp() {
+		return op;
+	}
+	public void setOp(char op) {
+		this.op = op;
+	}
+	public String getOptn() {
+		return optn;
+	}
+	public void setOptn(String optn) {
+		this.optn = optn;
+	}
+	
+	public void addOptions()
+	{
+		lhmo.put(op, optn);
+	}
+}
+class Student 
+{
+	
+}
+public class Task3 {
+	public static void main(String[] args)
+	{
+		LinkedHashMap<Character,String> lhmo = new LinkedHashMap<Character,String>();
+		LinkedHashMap<String,Map> lhmq=new LinkedHashMap<String,Map>();
+		Option op=new Option();
+		op.setOp('A');
+		op.setOptn("Dynamic");
+		op.addOptions();
+		op.setOp('B');
+		op.setOptn("Architecture Neutral");
+		op.addOptions();
+		op.setOp('C');
+		op.setOptn("Use of pointers");
+		op.addOptions();
+		op.setOp('D');
+		op.setOptn("Object-oriented");
+		op.addOptions();
+		Question q=new Question();
+		q.setQuestion("Which of the following is not a Java features?");
+		q.addQuestion(q.getQuestion(),lhmo);
+		//q.display();
+		
+	}
+
+}
