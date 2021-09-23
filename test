@@ -1,112 +1,315 @@
-package practise;
-import java.util.*;
-/*interface ITestPaper
-{
-	String subjectName ();
+package bankingsystem;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+interface IOption{
+	char getOption();
+	void setOption(char s);
+	String getText();
+	void setText(String str);
+}
+interface IStudent{
+	int getRoll();
+	void setRoll(int s);
+	String getSname();
+	void setSname(String s);
+}
+interface IQuestion{
+	String getQ();	
+}
+interface ITestPaper{
+	void setSub(String s);
+	String getSub();
+	void setPaper(String s);
+	String getPaper();	
+}
+class Option implements IOption{
+	char option;
+	String text;
+	Option(char option,String text){
+		this.option=option;
+		this.text=text;
+	}
+	public char getOption(){
+		return this.option;
+	}
+	public void setOption(char s){
+		this.option=s;
+	}
+	public String getText(){
+		return this.text;
+	}
+	public void setText(String s){
+		this.text=s;
+	}
+}
 
-	String testPaperName();
+class Question implements IQuestion{
+	String qText;
+	ArrayList<Option> al=new ArrayList<>();
+	char correctAnswerLetter;
+	char studentSelected;
+	Question(String qText,ArrayList<Option> al,char correctAnswer){
+		this.qText=qText;
+		this.al=al;
+		this.correctAnswerLetter=correctAnswer;
+	}
+	public String getQ(){
+		return this.qText;
+	}
+	public void setQ(String s){
+		this.qText=s;
+	}
+	public char getStudentSel(){
+		return this.studentSelected;
+	}
+	public void setStudentSel(char s){
+		this.studentSelected=s;
+	}
+	
+}
 
-	ArrayList<IQuestion> questions();
-	
+class TestPaper implements ITestPaper{
+	String subj;
+	String testPaper;
+	ArrayList<Question> ar=new ArrayList<>();
+	int marks;
+	TestPaper(String subj){
+		if(subj.equals("Java")){
+		this.subj=subj;
+		this.testPaper=testPaper;
+		ArrayList<Option> temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"10"));
+		temp.add(new Option('B',"20"));
+		temp.add(new Option('C',"30"));
+		temp.add(new Option('D',"40"));
+		Question q=new Question("What is value of 10-20*10+200",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"1/2"));
+		temp.add(new Option('B',"1/4"));
+		temp.add(new Option('C',"1"));
+		temp.add(new Option('D',"0"));
+		q=new Question("What is value of sin 30",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"5"));
+		temp.add(new Option('B',"1"));
+		temp.add(new Option('C',"3"));
+		temp.add(new Option('D',"4"));
+		q=new Question("What is value of tan45 ",temp,'B');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"0"));
+		temp.add(new Option('B',"20"));
+		temp.add(new Option('C',"30"));
+		temp.add(new Option('D',"infinite"));
+		q=new Question("What is value of 0/0",temp,'D');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"-10"));
+		temp.add(new Option('B',"-20"));
+		temp.add(new Option('C',"-90"));
+		temp.add(new Option('D',"-40"));
+		q=new Question("What is value of 10-30*10+200",temp,'C');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"10"));
+		temp.add(new Option('B',"20"));
+		temp.add(new Option('C',"30"));
+		temp.add(new Option('D',"40"));
+		q=new Question("What is value of 10-20*10+200",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"11"));
+		temp.add(new Option('B',"153"));
+		temp.add(new Option('C',"111"));
+		temp.add(new Option('D',"245"));
+		q=new Question("Find amstrong among them ",temp,'B');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"110"));
+		temp.add(new Option('B',"210"));
+		temp.add(new Option('C',"310"));
+		temp.add(new Option('D',"410"));
+		q=new Question("What is value of 210/2+5",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"1"));
+		temp.add(new Option('B',"2"));
+		temp.add(new Option('C',"3"));
+		temp.add(new Option('D',"4"));
+		q=new Question("What is value of tan45/cot45",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"110"));
+		temp.add(new Option('B',"2"));
+		temp.add(new Option('C',"3"));
+		temp.add(new Option('D',"1"));
+		q=new Question("What is value of cot45/tan45",temp,'D');
+		this.ar.add(q);
+	}
+	else{
+		this.subj=subj;
+		this.testPaper=testPaper;
+		ArrayList<Option> temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"Sachin"));
+		temp.add(new Option('B',"Modi"));
+		temp.add(new Option('C',"Kohli"));
+		temp.add(new Option('D',"Dhoni"));
+		Question q=new Question("Who is present cricket indian captain ",temp,'C');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"Rahul"));
+		temp.add(new Option('B',"Laxman"));
+		temp.add(new Option('C',"pujara"));
+		temp.add(new Option('D',"Kohli"));
+		q=new Question("Who is known as wall of cricket ",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"argentina"));
+		temp.add(new Option('B',"brazil"));
+		temp.add(new Option('C',"germany"));
+		temp.add(new Option('D',"italy"));
+		q=new Question("Which team won mant football world cups ",temp,'B');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"Pardeep"));
+		temp.add(new Option('B',"anup"));
+		temp.add(new Option('C',"rohit"));
+		temp.add(new Option('D',"revanth"));
+		q=new Question("Find best kabaddi player ",temp,'D');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"revanth"));
+		temp.add(new Option('B',"kohli"));
+		temp.add(new Option('C',"dhoni"));
+		temp.add(new Option('D',"vamshi"));
+		q=new Question("Find best cricketer ",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"Sania"));
+		temp.add(new Option('B',"Tamana"));
+		temp.add(new Option('C',"Kajal"));
+		temp.add(new Option('D',"sindhu"));
+		q=new Question("Find best badminton player ",temp,'D');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"1983"));
+		temp.add(new Option('B',"1000"));
+		temp.add(new Option('C',"1110"));
+		temp.add(new Option('D',"1993"));
+		q=new Question("When did india won first world cup ",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"neeraj"));
+		temp.add(new Option('B',"dhoni"));
+		temp.add(new Option('C',"revanth"));
+		temp.add(new Option('D',"ravi"));
+		q=new Question("who won gold medal in 2020 olympics ",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"No"));
+		temp.add(new Option('B',"Yes"));
+		temp.add(new Option('C',"Neither yes or no"));
+		temp.add(new Option('D',"non relatable"));
+		q=new Question("Indian cricket captain is revanth ",temp,'A');
+		this.ar.add(q);
+		temp=new  ArrayList<Option>();
+		temp.add(new Option('A',"urdu"));
+		temp.add(new Option('B',"english"));
+		temp.add(new Option('C',"hindi"));
+		temp.add(new Option('D',"telugu"));
+		q=new Question("Tollywood related to which language ",temp,'D');
+		this.ar.add(q);
+	}
+	}
+	void attempt(){
+	    Scanner sc=new Scanner(System.in);
+	    for(int i=0;i<10;i++){
+	        System.out.println((i+1)+" "+ar.get(i).qText);
+	        for(int j=0;j<4;j++){
+	            System.out.println(ar.get(i).al.get(j).option+"."+ar.get(i).al.get(j).text);
+	        }
+	        System.out.println("Enter choice");
+	        char studentSelected=sc.next().charAt(0);
+			ar.get(i).studentSelected=studentSelected;
+	        if(studentSelected==ar.get(i).correctAnswerLetter){
+	            this.marks+=1;
+	        }
+			System.out.println("Correct answer for this question is: "+ar.get(i).correctAnswerLetter);
+			System.out.println();
+	    }
+	}
+	public int getMarks(){
+		return this.marks;
+	}
+	public void setMarks(int s){
+		this.marks=s;
+	}
+	public void setSub(String s){
+		this.subj=s;
+	}
+	public String getSub(){
+		return this.subj;
+	}
+	public void setPaper(String s){
+		this.testPaper=s;
+	}
+	public String getPaper(){
+		return this.testPaper;
+	}
 }
-interface IQuestion
-{
-	
-}
-interface IOption
-{
-	
-}
-interface IStudent
-{
-	
-}*/
-class TestPaper 
-{
-	
 
+class Student implements IStudent{
+	int rollNo;
+	String sname;
+	List<TestPaper> l=new ArrayList<TestPaper>();
+	Student(int r,String s,TestPaper l){
+		this.rollNo=r;
+		this.sname=s;
+		this.l.add(l);
+	}
+	public int getRoll(){
+		return this.rollNo;
+	}
+	public void setRoll(int s){
+		this.rollNo=s;
+	}
+	public String getSname(){
+		return this.sname;
+	}
+	public void setSname(String s){
+		this.sname=s;
+	}
 }
-class Question 
+public class Taskk3
 {
-	
-	private String question;
-	
+	public static void main(String args[]){
+		int rollNo;
+		String sname;
+		Scanner sc=new Scanner(System.in);
+		TestPaper t=new TestPaper("Java");
+		/*System.out.println("Enter your RollNo:");
+		rollNo=sc.nextInt();
+		System.out.println("Enter your name:");
+		sname=sc.next();
+		System.out.println("You will be attempting two tests");
+		System.out.println("First Java");	
+		System.out.println("Second DBMS");
+		Student s=new Student(rollNo,sname,t);
+		System.out.println(s.getRoll()+" "+s.getSname()+" Attempting Maths Test");
+		t.attempt();
+		System.out.println("Marks in test 1 are: "+t.marks);
+		System.out.println();
+		TestPaper t1=new TestPaper("DBMS");
+		System.out.println(s.getRoll()+" "+s.getSname()+" Attempting GK Test");
+		System.out.println();
+		System.out.println("GK test is Starting be ready");
+		System.out.println();
+		t1.attempt();
+		System.out.println("Marks in test 2 are: "+t1.marks);*/
+	}
+}
 
-	public String getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(String question) {
-		this.question = question;
-	}
-	LinkedHashMap<String,Map> lhmq=new LinkedHashMap<String,Map>();
-	public void addQuestion(String str,LinkedHashMap h)
-	{
-		lhmq.put(str,h);
-	}
-	public void display()
-	{
-		lhmq.forEach((k,v)-> System.out.println();
-	}
 	
-	
-}
-class AddQuestion
-{
-	
-	
-	
-}
-class Option 
-{
-	LinkedHashMap<Character,String> lhmo = new LinkedHashMap<Character,String>();
-	private  char op;
-	private String optn;
-	public char getOp() {
-		return op;
-	}
-	public void setOp(char op) {
-		this.op = op;
-	}
-	public String getOptn() {
-		return optn;
-	}
-	public void setOptn(String optn) {
-		this.optn = optn;
-	}
-	
-	public void addOptions()
-	{
-		lhmo.put(op, optn);
-	}
-}
-class Student 
-{
-	
-}
-public class Task3 {
-	public static void main(String[] args)
-	{
-		LinkedHashMap<Character,String> lhmo = new LinkedHashMap<Character,String>();
-		LinkedHashMap<String,Map> lhmq=new LinkedHashMap<String,Map>();
-		Option op=new Option();
-		op.setOp('A');
-		op.setOptn("Dynamic");
-		op.addOptions();
-		op.setOp('B');
-		op.setOptn("Architecture Neutral");
-		op.addOptions();
-		op.setOp('C');
-		op.setOptn("Use of pointers");
-		op.addOptions();
-		op.setOp('D');
-		op.setOptn("Object-oriented");
-		op.addOptions();
-		Question q=new Question();
-		q.setQuestion("Which of the following is not a Java features?");
-		q.addQuestion(q.getQuestion(),lhmo);
-		//q.display();
-		
-	}
-
-}
