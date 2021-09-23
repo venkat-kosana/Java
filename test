@@ -54,6 +54,11 @@ class Question implements IQuestion{
 		this.al=al;
 		this.correctAnswerLetter=correctAnswer;
 	}
+	Question(String ques,char crr)
+	{
+		qText=ques;
+		correctAnswerLetter=crr;
+	}
 	public String getQ(){
 		return this.qText;
 	}
@@ -73,11 +78,12 @@ class TestPaper implements ITestPaper{
 	String subj;
 	String testPaper;
 	ArrayList<Question> ar=new ArrayList<>();
+	ArrayList<Question> ac=new ArrayList<>();
 	int marks;
 	TestPaper(String subj){
 		if(subj.equals("Java")){
-		this.subj=subj;
-		this.testPaper=testPaper;
+		/*this.subj=subj;
+		this.testPaper=testPaper;*/
 		ArrayList<Option> temp=new  ArrayList<Option>();
 		temp.add(new Option('A',"10"));
 		temp.add(new Option('B',"20"));
@@ -240,6 +246,7 @@ class TestPaper implements ITestPaper{
 			System.out.println("Correct answer for this question is: "+ar.get(i).correctAnswerLetter);
 			System.out.println();
 	    }
+	    
 	}
 	public int getMarks(){
 		return this.marks;
@@ -290,7 +297,7 @@ public class Taskk3
 		String sname;
 		Scanner sc=new Scanner(System.in);
 		TestPaper t=new TestPaper("Java");
-		/*System.out.println("Enter your RollNo:");
+		System.out.println("Enter your RollNo:");
 		rollNo=sc.nextInt();
 		System.out.println("Enter your name:");
 		sname=sc.next();
@@ -305,10 +312,10 @@ public class Taskk3
 		TestPaper t1=new TestPaper("DBMS");
 		System.out.println(s.getRoll()+" "+s.getSname()+" Attempting GK Test");
 		System.out.println();
-		System.out.println("GK test is Starting be ready");
+		System.out.println("Test 2 is Starting be ready");
 		System.out.println();
 		t1.attempt();
-		System.out.println("Marks in test 2 are: "+t1.marks);*/
+		System.out.println("Marks in test 2 are: "+t1.marks);
 	}
 }
 
