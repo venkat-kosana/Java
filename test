@@ -1,4 +1,4 @@
-package bankingsystem;
+package practise;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -80,173 +80,185 @@ class TestPaper implements ITestPaper{
 	ArrayList<Question> ar=new ArrayList<>();
 	ArrayList<Question> ac=new ArrayList<>();
 	int marks;
-	TestPaper(String subj){
-		if(subj.equals("Java")){
-		/*this.subj=subj;
-		this.testPaper=testPaper;*/
-		ArrayList<Option> temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"10"));
-		temp.add(new Option('B',"20"));
-		temp.add(new Option('C',"30"));
-		temp.add(new Option('D',"40"));
-		Question q=new Question("What is value of 10-20*10+200",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"1/2"));
-		temp.add(new Option('B',"1/4"));
-		temp.add(new Option('C',"1"));
-		temp.add(new Option('D',"0"));
-		q=new Question("What is value of sin 30",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"5"));
-		temp.add(new Option('B',"1"));
-		temp.add(new Option('C',"3"));
-		temp.add(new Option('D',"4"));
-		q=new Question("What is value of tan45 ",temp,'B');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"0"));
-		temp.add(new Option('B',"20"));
-		temp.add(new Option('C',"30"));
-		temp.add(new Option('D',"infinite"));
-		q=new Question("What is value of 0/0",temp,'D');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"-10"));
-		temp.add(new Option('B',"-20"));
-		temp.add(new Option('C',"-90"));
-		temp.add(new Option('D',"-40"));
-		q=new Question("What is value of 10-30*10+200",temp,'C');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"10"));
-		temp.add(new Option('B',"20"));
-		temp.add(new Option('C',"30"));
-		temp.add(new Option('D',"40"));
-		q=new Question("What is value of 10-20*10+200",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"11"));
-		temp.add(new Option('B',"153"));
-		temp.add(new Option('C',"111"));
-		temp.add(new Option('D',"245"));
-		q=new Question("Find amstrong among them ",temp,'B');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"110"));
-		temp.add(new Option('B',"210"));
-		temp.add(new Option('C',"310"));
-		temp.add(new Option('D',"410"));
-		q=new Question("What is value of 210/2+5",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"1"));
-		temp.add(new Option('B',"2"));
-		temp.add(new Option('C',"3"));
-		temp.add(new Option('D',"4"));
-		q=new Question("What is value of tan45/cot45",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"110"));
-		temp.add(new Option('B',"2"));
-		temp.add(new Option('C',"3"));
-		temp.add(new Option('D',"1"));
-		q=new Question("What is value of cot45/tan45",temp,'D');
-		this.ar.add(q);
+	TestPaper(Integer i)
+	{
+		if(i==1)
+		{
+			ArrayList<Option> temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Dynamic"));
+			temp.add(new Option('B',"Architecture Neutral"));
+			temp.add(new Option('C',"Use of pointers"));
+			temp.add(new Option('D',"Object-oriented"));
+			Question q=new Question("Which of the following is not a Java features?",temp,'C');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Unicode escape sequence"));
+			temp.add(new Option('B',"Octal escape"));
+			temp.add(new Option('C',"Hexadecimal"));
+			temp.add(new Option('D',"Line feed"));
+			q=new Question("The \\u0021 article referred to as a",temp,'A');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"JVM"));
+			temp.add(new Option('B',"JRE"));
+			temp.add(new Option('C',"JDK"));
+			temp.add(new Option('D',"JDB"));
+			q=new Question("_____ is used to find and fix bugs in the Java programs. ",temp,'D');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"James Gosling"));
+			temp.add(new Option('B',"M. P Java"));
+			temp.add(new Option('C',"Charel Babbage"));
+			temp.add(new Option('D',"Blais Pascal"));
+			q=new Question("Who is known as father of Java Programming Language?",temp,'A');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Selection statements"));
+			temp.add(new Option('B',"Loop Statements"));
+			temp.add(new Option('C',"Transfer statements"));
+			temp.add(new Option('D',"Pause Statement"));
+			q=new Question("In java control statements break, continue, return, try-catch-finally and assert belongs to?",temp,'C');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"double"));
+			temp.add(new Option('B',"switch"));
+			temp.add(new Option('C',"then"));
+			temp.add(new Option('D',"instanceof"));
+			q=new Question("Which of the following are not Java keywords ?",temp,'C');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"()"));
+			temp.add(new Option('B',"++"));
+			temp.add(new Option('C',"*"));
+			temp.add(new Option('D',">>"));
+			q=new Question("Which of these have highest precedence?",temp,'A');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Integer"));
+			temp.add(new Option('B',"Character"));
+			temp.add(new Option('C',"Boolean"));
+			temp.add(new Option('D',"Float"));
+			q=new Question("Which of these is returned by operator '&' ?",temp,'B');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Uppercase L"));
+			temp.add(new Option('B',"Lowercase L"));
+			temp.add(new Option('C',"Long"));
+			temp.add(new Option('D',"Both A and B"));
+			q=new Question("Data type long literals are appended by _____",temp,'D');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Sumatra"));
+			temp.add(new Option('B',"J++"));
+			temp.add(new Option('C',"Oak"));
+			temp.add(new Option('D',"Pine"));
+			q=new Question("Java language was initially called as ________",temp,'D');
+			this.ar.add(q);
+		}
+		else
+		{
+			ArrayList<Option> temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"DML(Data Manipulation Language)"));
+			temp.add(new Option('B',"Query"));
+			temp.add(new Option('C',"Relational Schema"));
+			temp.add(new Option('D',"DDL(Data Definition Language)"));
+			Question q=new Question("Which of the following is generally used for performing tasks like creating the structure of the relations, deleting relation? ",temp,'D');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"One class may have many teachers"));
+			temp.add(new Option('B',"One teacher can have many classes"));
+			temp.add(new Option('C',"Many classes may have many teachers"));
+			temp.add(new Option('D',"Many teachers may have many classes"));
+			q=new Question("What do you mean by one to many relationships? ",temp,'B');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"File Allocation Tree"));
+			temp.add(new Option('B',"File Allocation Table"));
+			temp.add(new Option('C',"File Allocation Graph"));
+			temp.add(new Option('D',"All of the above"));
+			q=new Question("The term \"FAT\" is stands for_____ ",temp,'B');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"8GB"));
+			temp.add(new Option('B',"4GB"));
+			temp.add(new Option('C',"4TB"));
+			temp.add(new Option('D',"None of the above"));
+			q=new Question("Which of the following can be considered as the maximum size that is supported by FAT?",temp,'B');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"New Technology File System"));
+			temp.add(new Option('B',"New Tree File System"));
+			temp.add(new Option('C',"New Table type File System"));
+			temp.add(new Option('D',"Both A and C"));
+			q=new Question("The term \"NTFS\" refers to which one of the following?",temp,'A');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Data Management"));
+			temp.add(new Option('B',"Data Mining"));
+			temp.add(new Option('C',"Data Warehouse"));
+			temp.add(new Option('D',"Both B and C"));
+			q=new Question("A huge collection of the information or data accumulated form several different sources is known as ________:",temp,'C');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Data redundancy"));
+			temp.add(new Option('B',"Data recovery tool"));
+			temp.add(new Option('C',"Data mining"));
+			temp.add(new Option('D',"Both B and C"));
+			q=new Question("Which of the following can be used to extract or filter the data & information from the data warehouse?",temp,'C');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Data Repository"));
+			temp.add(new Option('B',"Data Inconsistency"));
+			temp.add(new Option('C',"Data Mining"));
+			temp.add(new Option('D',"Data Redundancy"));
+			q=new Question("Which one of the following refers to the copies of the same data (or information) occupying the memory space at multiple places.",temp,'D');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Directory"));
+			temp.add(new Option('B',"Sub Data"));
+			temp.add(new Option('C',"Warehouse"));
+			temp.add(new Option('D',"Meta Data"));
+			q=new Question("Which one of the following refers to the \"data about data\"?",temp,'D');
+			this.ar.add(q);
+			temp=new  ArrayList<Option>();
+			temp.add(new Option('A',"Conceptual Level"));
+			temp.add(new Option('B',"Physical Level"));
+			temp.add(new Option('C',"File Level"));
+			temp.add(new Option('D',"Logical Level"));
+			q=new Question("Which of the following refers to the level of data abstraction that describes exactly how the data actually stored?",temp,'B');
+			this.ar.add(q);
+		}
 	}
-	else{
-		this.subj=subj;
-		this.testPaper=testPaper;
-		ArrayList<Option> temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"Sachin"));
-		temp.add(new Option('B',"Modi"));
-		temp.add(new Option('C',"Kohli"));
-		temp.add(new Option('D',"Dhoni"));
-		Question q=new Question("Who is present cricket indian captain ",temp,'C');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"Rahul"));
-		temp.add(new Option('B',"Laxman"));
-		temp.add(new Option('C',"pujara"));
-		temp.add(new Option('D',"Kohli"));
-		q=new Question("Who is known as wall of cricket ",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"argentina"));
-		temp.add(new Option('B',"brazil"));
-		temp.add(new Option('C',"germany"));
-		temp.add(new Option('D',"italy"));
-		q=new Question("Which team won mant football world cups ",temp,'B');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"Pardeep"));
-		temp.add(new Option('B',"anup"));
-		temp.add(new Option('C',"rohit"));
-		temp.add(new Option('D',"revanth"));
-		q=new Question("Find best kabaddi player ",temp,'D');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"revanth"));
-		temp.add(new Option('B',"kohli"));
-		temp.add(new Option('C',"dhoni"));
-		temp.add(new Option('D',"vamshi"));
-		q=new Question("Find best cricketer ",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"Sania"));
-		temp.add(new Option('B',"Tamana"));
-		temp.add(new Option('C',"Kajal"));
-		temp.add(new Option('D',"sindhu"));
-		q=new Question("Find best badminton player ",temp,'D');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"1983"));
-		temp.add(new Option('B',"1000"));
-		temp.add(new Option('C',"1110"));
-		temp.add(new Option('D',"1993"));
-		q=new Question("When did india won first world cup ",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"neeraj"));
-		temp.add(new Option('B',"dhoni"));
-		temp.add(new Option('C',"revanth"));
-		temp.add(new Option('D',"ravi"));
-		q=new Question("who won gold medal in 2020 olympics ",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"No"));
-		temp.add(new Option('B',"Yes"));
-		temp.add(new Option('C',"Neither yes or no"));
-		temp.add(new Option('D',"non relatable"));
-		q=new Question("Indian cricket captain is revanth ",temp,'A');
-		this.ar.add(q);
-		temp=new  ArrayList<Option>();
-		temp.add(new Option('A',"urdu"));
-		temp.add(new Option('B',"english"));
-		temp.add(new Option('C',"hindi"));
-		temp.add(new Option('D',"telugu"));
-		q=new Question("Tollywood related to which language ",temp,'D');
-		this.ar.add(q);
-	}
-	}
-	void attempt(){
+	void attempt()
+	{
 	    Scanner sc=new Scanner(System.in);
-	    for(int i=0;i<10;i++){
+	    for(int i=0;i<10;i++)
+	    {
 	        System.out.println((i+1)+" "+ar.get(i).qText);
-	        for(int j=0;j<4;j++){
+	        for(int j=0;j<4;j++)
+	        {
 	            System.out.println(ar.get(i).al.get(j).option+"."+ar.get(i).al.get(j).text);
 	        }
 	        System.out.println("Enter choice");
 	        char studentSelected=sc.next().charAt(0);
 			ar.get(i).studentSelected=studentSelected;
-	        if(studentSelected==ar.get(i).correctAnswerLetter){
+	        if(studentSelected==ar.get(i).correctAnswerLetter)
+	        {
 	            this.marks+=1;
 	        }
-			System.out.println("Correct answer for this question is: "+ar.get(i).correctAnswerLetter);
-			System.out.println();
 	    }
 	    
+	}
+	void correctAnswers()
+	{
+		System.out.println("Correct answer for this paper are: ");
+		 for(int i=0;i<10;i++)
+		    {
+				System.out.println((i+1)+" "+ar.get(i).qText);
+				System.out.println("Correct answer for this question is: "+ar.get(i).correctAnswerLetter);
+				System.out.println();
+		    }
+		
 	}
 	public int getMarks(){
 		return this.marks;
@@ -290,33 +302,40 @@ class Student implements IStudent{
 		this.sname=s;
 	}
 }
-public class Taskk3
+public class Task3
 {
 	public static void main(String args[]){
 		int rollNo;
 		String sname;
+		int[] choice=new int[2];
 		Scanner sc=new Scanner(System.in);
-		TestPaper t=new TestPaper("Java");
 		System.out.println("Enter your RollNo:");
 		rollNo=sc.nextInt();
 		System.out.println("Enter your name:");
 		sname=sc.next();
 		System.out.println("You will be attempting two tests");
-		System.out.println("First Java");	
-		System.out.println("Second DBMS");
+		System.out.println("Enter 1 to attempt Java");	
+		System.out.println("Enter 2 to attempt DBMS");
+		System.out.println("Enter your first choice and second choice: ");
+		for(int i=0;i<2;i++) 
+		{
+			choice[i]=sc.nextInt();	
+		}
+		System.out.println("NOTE: Enter your choice in capital!");
+		TestPaper t=new TestPaper(choice[0]);
 		Student s=new Student(rollNo,sname,t);
-		System.out.println(s.getRoll()+" "+s.getSname()+" Attempting Maths Test");
+		System.out.println("All the best! :) "+s.getSname()+" for your Java test");
 		t.attempt();
 		System.out.println("Marks in test 1 are: "+t.marks);
 		System.out.println();
-		TestPaper t1=new TestPaper("DBMS");
-		System.out.println(s.getRoll()+" "+s.getSname()+" Attempting GK Test");
+		TestPaper t1=new TestPaper(choice[1]);
+		System.out.println("All the best! :) "+s.getSname()+" for your DBMS test");
 		System.out.println();
-		System.out.println("Test 2 is Starting be ready");
 		System.out.println();
 		t1.attempt();
 		System.out.println("Marks in test 2 are: "+t1.marks);
+		t.correctAnswers();
+		t1.correctAnswers();
 	}
-}
-
 	
+}
